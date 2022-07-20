@@ -10,8 +10,9 @@ export default function TodoList(props) {
                             <p className="card-text">
                                 {todo.description}
                             </p>
-                            <a href="#" className="card-link">Card link</a>
-                            <a href="#" className="card-link">Another link</a>
+                            <button className="btn btn-primary">Done</button>
+                            <button className="btn btn-secondary m-2">Delete</button>
+                            <button className="btn btn-danger">Cancel</button>
                         </div>
                     </div>
                     
