@@ -2,7 +2,6 @@ import { useFormik } from "formik";
 import { todoContext } from "../../contexts/TodoContext";
 
 export default function TodoForm(props) {
-    console.log(props);
   const formik = useFormik({
     // must initialise values here in the form
     initialValues: {
@@ -10,9 +9,19 @@ export default function TodoForm(props) {
       description: "",
     },
     onSubmit: (values) => {
-      console.log(values.todo);
-    //   setTodo(["fctttctct"]);
-      alert(JSON.stringify(values, null, 2));
+      if (values.todo && values.description) {
+          props.addTodo(
+            {
+            todo:values.todo,
+            description:values.description
+          }
+          )
+        alert(JSON.stringify(values, null, 2));
+        
+      }
+      else {
+        alert("Must fill all form");
+      }
     },
   });
   return (
@@ -29,9 +38,9 @@ export default function TodoForm(props) {
           className="form-control"
           onChange={formik.handleChange}
           value={formik.values.todo}
+          style={{marginBottom:"5px"}}
         />
-        <input
-          type="text"
+        <textarea
           name="description"
           className="form-control"
           onChange={formik.handleChange}

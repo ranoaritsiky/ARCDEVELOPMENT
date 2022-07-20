@@ -13,7 +13,7 @@ export default function NavBar() {
       <AppBar position="static">
         <Toolbar>
           <IconButton
-            size="large"
+            size="large" 
             edge="start"
             color="inherit"
             aria-label="menu"

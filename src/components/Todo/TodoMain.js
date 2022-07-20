@@ -1,15 +1,20 @@
 import {useState} from 'react' 
 import TodoForm from './TodoForm'
+import TodoList from './TodoList'
 
 import {todoContext} from '../../contexts/TodoContext'
 
 export default function TodoMain(){
-    const[todo,setTodo]=useState([])
+    const [todo, setTodo] = useState([])
+    
+    const addTodo = (val) => {
+        setTodo([...todo,val])
+    }
 
-    console.log(todo);
     return (
-        <>
-            <TodoForm setTodo={setTodo}/>
-        </>
+        <div className="d-flex flex-row">
+            <TodoForm addTodo={addTodo}/>
+            <TodoList todoList={todo}/>
+        </div>
     )
 }
