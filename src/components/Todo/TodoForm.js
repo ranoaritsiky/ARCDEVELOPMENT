@@ -1,5 +1,4 @@
 import { useFormik } from "formik";
-import { todoContext } from "../../contexts/TodoContext";
 
 export default function TodoForm(props) {
   const formik = useFormik({
@@ -8,7 +7,8 @@ export default function TodoForm(props) {
       todo: "",
       description: "",
     },
-    onSubmit: (values) => {
+    onSubmit: (values,{resetForm}) => {
+      
       if (values.todo && values.description) {
           props.addTodo(
             {
@@ -22,6 +22,7 @@ export default function TodoForm(props) {
       else {
         alert("Must fill all form");
       }
+      resetForm({values:''})
     },
   });
   return (
