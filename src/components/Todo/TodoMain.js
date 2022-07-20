@@ -2,7 +2,6 @@ import {useState} from 'react'
 import TodoForm from './TodoForm'
 import TodoList from './TodoList'
 
-import {todoContext} from '../../contexts/TodoContext'
 
 export default function TodoMain(){
     const [todo, setTodo] = useState([])
