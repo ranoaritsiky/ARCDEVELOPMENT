@@ -13,10 +13,12 @@ export default function TodoForm(props) {
           props.addTodo(
             {
             todo:values.todo,
-            description:values.description
+            description:values.description,
+            id:Math.random(),
+            status:"In progress"
           }
           )
-        alert(JSON.stringify(values, null, 2));
+        // alert(JSON.stringify(values, null, 2));
         
       }
       else {
