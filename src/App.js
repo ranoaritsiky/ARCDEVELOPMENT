@@ -2,7 +2,6 @@ import {useState} from 'react'
 
 import NavBar from "./components/Header/Header";
 import TodoMain from "./components/Todo/TodoMain";
-import Counter from "./components/Count/Index.js";
 
 // import context
 import { themeContext } from "./contexts/themeContext";
@@ -33,7 +32,6 @@ function App() {
       <themeContext.Provider value={{state:theme,setState:changeTheme}} >
         <NavBar />
         <TodoMain />
-        <Counter />
       </themeContext.Provider>
     </div>
   );
