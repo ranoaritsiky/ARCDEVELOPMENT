@@ -8,9 +8,11 @@ import IconButton from "@mui/material/IconButton";
 // import MenuIcon from '@mui/icons-material/Menu';
 import { themeContext } from "../../contexts/themeContext";
 
+import {connect} from 'react-redux';
+
 import BasicSwitches from "./Switch";
 
-export default function NavBar() {
+function NavBar(props) {
   const { state } = useContext(themeContext);
   const theme = state.isDarkTheme ?  state.darkTheme : state.lightTheme ;
   
@@ -41,3 +43,10 @@ export default function NavBar() {
     </Box>
   );
 }
+
+
+export default connect((state)=>{
+  return {
+    users:state
+  }
+})(NavBar)
