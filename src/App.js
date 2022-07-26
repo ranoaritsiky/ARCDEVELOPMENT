@@ -32,8 +32,8 @@ function App() {
       
       <themeContext.Provider value={{state:theme,setState:changeTheme}} >
         <NavBar />
-        <TodoMain />
         <User/>
+        <TodoMain />
       </themeContext.Provider>
     </div>
   );
