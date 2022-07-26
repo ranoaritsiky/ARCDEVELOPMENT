@@ -1,4 +1,5 @@
 import {connect} from 'react-redux';
+import UserForm from './UserForm';
 
 function User(props){
     return (
@@ -6,10 +7,12 @@ function User(props){
             <ul>
                 {props.users.map((user,index)=>(
                     <li key={index}>
-                        {user.firstName}- {user.lastName}
+                        {user.firstName} - {user.lastName}
                     </li>
                 ))}
             </ul>
+            <hr/>
+            <UserForm/>
         </div>
     )
 }
