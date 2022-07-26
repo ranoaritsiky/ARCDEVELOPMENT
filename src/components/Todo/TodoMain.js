@@ -1,7 +1,6 @@
-import { useState,useContext } from "react";
+import { useState } from "react";
 import TodoForm from "./TodoForm";
 import TodoList from "./TodoList";
-import { themeContext } from "../../contexts/themeContext";
 
 export default function TodoMain() {
   const [todo, setTodo] = useState([]);
@@ -15,12 +14,10 @@ export default function TodoMain() {
   };
 
   const changeStatus = (val) => {
-    let value = todo.filter((todo) => todo.id === val);
+    // let value = todo.filter((todo) => todo.id === val);
   };
-  const { state } = useContext(themeContext);
-  const theme = state.isDarkTheme ? state.darkTheme : state.lightTheme;
   return (
-    <div className="d-flex flex-row" >
+    <div className="d-flex flex-row">
       <TodoForm addTodo={addTodo} />
       {/* show list of todo in card */}
       {todo.map((todo, index) => (
