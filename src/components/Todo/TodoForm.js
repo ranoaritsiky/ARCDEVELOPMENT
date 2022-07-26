@@ -52,6 +52,7 @@ export default function TodoForm(props) {
         <button className="btn btn-primary mt-4" type="submit">
           Submit
         </button>
+        <hr/>
       </div>
     </form>
   );

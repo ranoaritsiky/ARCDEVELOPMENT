@@ -3,6 +3,8 @@ import {useState} from 'react'
 import NavBar from "./components/Header/Header";
 import TodoMain from "./components/Todo/TodoMain";
 
+import User from "./components/Users/Index"
+
 // import context
 import { themeContext } from "./contexts/themeContext";
 
@@ -32,6 +34,7 @@ function App() {
       <themeContext.Provider value={{state:theme,setState:changeTheme}} >
         <NavBar />
         <TodoMain />
+        <User/>
       </themeContext.Provider>
     </div>
   );
