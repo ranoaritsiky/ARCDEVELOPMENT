@@ -12,11 +12,14 @@ import BasicSwitches from "./Switch";
 
 export default function NavBar() {
   const { state } = useContext(themeContext);
-  const theme = state.isDarkTheme ? state.darkTheme : state.lightTheme;
-  // console.log(theme.background)
+  const theme = state.isDarkTheme ?  state.darkTheme : state.lightTheme ;
+  
   return (
-    <Box sx={{ flexGrow: 1 }} >
-      <AppBar position="static" style={{backgroundColor:theme.background,color:theme.text}}>
+    <Box sx={{ flexGrow: 1 }}>
+      <AppBar
+        position="static"
+        style={{ backgroundColor: theme.background, color: theme.text }}
+      >
         <Toolbar>
           <IconButton
             size="large"
@@ -30,7 +33,7 @@ export default function NavBar() {
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
             News
           </Typography>
-          <BasicSwitches />
+          <BasicSwitches stateTheme={state.isDarkTheme} />
 
           <Button color="inherit">Login</Button>
         </Toolbar>

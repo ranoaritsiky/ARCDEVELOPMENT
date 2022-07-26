@@ -21,7 +21,6 @@ function App() {
     },
   })
   const changeTheme=(isDark)=>{
-    console.log(isDark)
     setTheme(
       {
         ...theme,isDarkTheme:isDark
